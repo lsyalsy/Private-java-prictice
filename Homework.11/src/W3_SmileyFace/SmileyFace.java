@@ -28,7 +28,7 @@ public class SmileyFace extends JFrame {
         //嘴
         g.drawArc(100, 120, 100, 80, 180, 180);
     }
-    //主程序入口
+    //主程序入口,
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             SmileyFace smiley = new SmileyFace();
