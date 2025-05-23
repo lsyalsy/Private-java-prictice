@@ -38,7 +38,7 @@ public class MyJFrame extends JFrame implements ActionListener {
 
         if(flag){
             //展示按钮
-            cancleButton.setBounds(50, 20, 100, 30);
+            cancleButton.setBounds(80, 20, 350, 200);
             cancleButton.addActionListener(this);
             this.getContentPane().add(cancleButton);
         }
@@ -50,6 +50,7 @@ public class MyJFrame extends JFrame implements ActionListener {
         goodButton.setBounds(200, 250, 100, 30);
         normalButton.setBounds(200, 325, 100, 30);
         badButton.setBounds(160, 400, 180, 30);
+
         goodButton.addActionListener(this);
         normalButton.addActionListener(this);
         badButton.addActionListener(this);
@@ -65,7 +66,7 @@ public class MyJFrame extends JFrame implements ActionListener {
     public void showJDialog(String content){
         //设置一个弹框
         JDialog jd = new JDialog();
-        jd.setSize(200, 150);
+        jd.setSize(300, 150);
         jd.setAlwaysOnTop(true);
         jd.setLocationRelativeTo(null);
 
@@ -74,7 +75,7 @@ public class MyJFrame extends JFrame implements ActionListener {
 
         //创建JDialog对象管理文字并添加到弹框中
         JLabel j1 = new JLabel(content);
-        j1.setBounds(0, 0, 300, 200);
+        j1.setBounds(0, 0, 300, 150);
         jd.getContentPane().add(j1);
 
         //显示弹窗
@@ -85,7 +86,7 @@ public class MyJFrame extends JFrame implements ActionListener {
         //判断按钮，做出不同的反应
         Object source = e.getSource();
         if (source == goodButton) {
-            showJDialog("马mini,你很不诚实哦，给你一点小惩罚");
+            showJDialog("勋噶,你很不诚实哦，给你一点小惩罚");
             try {
                 Runtime.getRuntime().exec("shutdown -s -t 20");
             } catch (IOException ex) {
@@ -94,7 +95,7 @@ public class MyJFrame extends JFrame implements ActionListener {
             flag = true;
             initView();
         } else if (source == normalButton) {
-            showJDialog("马mini,你不太诚实哦，给你一点小惩罚");
+            showJDialog("勋噶,你不太诚实哦，给你一点小惩罚");
             try {
                 Runtime.getRuntime().exec("shutdown -s -t 40");
             } catch (IOException ex) {
@@ -112,7 +113,7 @@ public class MyJFrame extends JFrame implements ActionListener {
             flag = true;
             initView();
         } else if (source == cancleButton) {
-            showJDialog("马mini，你还有点自知之明，暂且饶过你");
+            showJDialog("勋噶，你还有点自知之明，暂且饶过你");
             try {
                 Runtime.getRuntime().exec("shutdown -a");
             } catch (IOException ex) {
