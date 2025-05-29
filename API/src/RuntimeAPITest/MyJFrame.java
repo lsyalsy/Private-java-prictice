@@ -8,16 +8,12 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class MyJFrame extends JFrame implements ActionListener {
+      JButton goodButton = new JButton("帅的一批");
+      JButton normalButton = new JButton("帅的一般般");
+      JButton badButton = new JButton("丑得惨绝人寰");
+      JButton cancleButton = new JButton("饶了我吧");
 
-    public static void main(String[] args) {
-        new MyJFrame();
-    }
-    JButton goodButton = new JButton("帅的一批");
-    JButton normalButton = new JButton("帅的一般般");
-    JButton badButton = new JButton("丑得惨绝人寰");
-    JButton cancelButton = new JButton("饶了我吧");
-
-    boolean flag = false;
+      boolean flag = false;
 
     public MyJFrame(){
         //界面初始化
@@ -42,9 +38,9 @@ public class MyJFrame extends JFrame implements ActionListener {
 
         if(flag){
             //展示按钮
-            cancelButton.setBounds(80, 20, 350, 200);
-            cancelButton.addActionListener(this);
-            this.getContentPane().add(cancelButton);
+            cancleButton.setBounds(80, 20, 350, 200);
+            cancleButton.addActionListener(this);
+            this.getContentPane().add(cancleButton);
         }
 
         JLabel text = new JLabel("你觉得你很帅吗？");
@@ -67,7 +63,7 @@ public class MyJFrame extends JFrame implements ActionListener {
         getContentPane().repaint();
     }
 
-    public void showJDialog1(String content){
+    public void showJDialog(String content){
         //设置一个弹框
         JDialog jd = new JDialog();
         jd.setSize(300, 150);
@@ -77,7 +73,7 @@ public class MyJFrame extends JFrame implements ActionListener {
         //弹窗不关闭无法操作下面的窗口
         jd.setModal(true);
 
-        //创建JLabel对象管理文字并添加到弹框中
+        //创建JDialog对象管理文字并添加到弹框中
         JLabel j1 = new JLabel(content);
         j1.setBounds(0, 0, 300, 150);
         jd.getContentPane().add(j1);
@@ -85,14 +81,12 @@ public class MyJFrame extends JFrame implements ActionListener {
         //显示弹窗
         jd.setVisible(true);
     }
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
         //判断按钮，做出不同的反应
         Object source = e.getSource();
         if (source == goodButton) {
-            showJDialog1("勋噶,你很不诚实哦，给你一点小惩罚");
+            showJDialog("勋噶,你很不诚实哦，给你一点小惩罚");
             try {
                 Runtime.getRuntime().exec("shutdown -s -t 20");
             } catch (IOException ex) {
@@ -101,7 +95,7 @@ public class MyJFrame extends JFrame implements ActionListener {
             flag = true;
             initView();
         } else if (source == normalButton) {
-            showJDialog1("xxx,你不太诚实哦，给你一点小惩罚");
+            showJDialog("勋噶,你不太诚实哦，给你一点小惩罚");
             try {
                 Runtime.getRuntime().exec("shutdown -s -t 40");
             } catch (IOException ex) {
@@ -110,7 +104,7 @@ public class MyJFrame extends JFrame implements ActionListener {
             flag = true;
             initView();
         } else if (source == badButton) {
-            showJDialog1("略微诚实，也给你一点小惩罚");
+            showJDialog("略微诚实，也给你一点小惩罚");
             try {
                 Runtime.getRuntime().exec("shutdown -s -t 60");
             } catch (IOException ex) {
@@ -118,8 +112,8 @@ public class MyJFrame extends JFrame implements ActionListener {
             }
             flag = true;
             initView();
-        } else if (source == cancelButton) {
-            showJDialog1("xxx，你还有点自知之明，暂且饶过你");
+        } else if (source == cancleButton) {
+            showJDialog("勋噶，你还有点自知之明，暂且饶过你");
             try {
                 Runtime.getRuntime().exec("shutdown -a");
             } catch (IOException ex) {
