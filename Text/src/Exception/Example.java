@@ -2,6 +2,7 @@ package Exception;
 
 import java.util.Random;
 
+
 public class Example {
     public double result(int x, int y){
         double A = 4.0 * x - 4.0;
