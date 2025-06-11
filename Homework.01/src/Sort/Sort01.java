@@ -1,6 +1,5 @@
 package Sort;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 //冒泡排序法排序
