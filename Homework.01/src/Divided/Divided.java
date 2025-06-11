@@ -6,11 +6,9 @@ public class Divided {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入一个整数：");
-        int n = sc.nextInt();
-        int num = Math.abs(n);
-        int sum = 0;
+        int n = sc.nextInt(), sum = 0, num = n;
         while(num > 0){
-            sum += num % 10;
+            sum = num % 10;
             num /= 10;
         }
         if(sum % 9 == 0){

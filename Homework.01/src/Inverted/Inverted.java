@@ -17,5 +17,6 @@ public class Inverted {
         for(int num : list){
             System.out.print(num);
         }
+        sc.close();
     }
 }

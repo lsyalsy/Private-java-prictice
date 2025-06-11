@@ -16,5 +16,6 @@ public class Sort02 {
         for (int i = 3; i >= 0; i--) {
             System.out.println(arr[i]);
         }
+        sc.close();
     }
 }

@@ -24,5 +24,6 @@ public class Sort01 {
         for(int n : arr){
             System.out.println(n);
         }
+        sc.close();
     }
 }
