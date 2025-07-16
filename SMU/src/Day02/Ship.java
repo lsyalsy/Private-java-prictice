@@ -1,7 +1,7 @@
 package Day02;
 import java.util.Scanner;
 
-public class ship {
+public class Ship {
     static int R, C;
     static char[][] grid;
     static boolean[][] visited;
