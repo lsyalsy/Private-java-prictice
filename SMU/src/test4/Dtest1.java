@@ -24,7 +24,7 @@ public class Dtest1 {
                 }
             }
         }
-
+        //用于学习使用git将代码变更为之前的版本
         System.out.println(V - dp[n][V]);
     }
 }
